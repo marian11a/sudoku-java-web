@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Select Difficulty</title>
+  <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #333;
+        }
+
+        button {
+            width: 200px;
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 1.5rem;
+            background-color: #6E6D70;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+  <h1>Select Difficulty</h1>
+
+  <form method="POST" th:action="@{/setDifficulty/3}">
+    <button>Easy</button>
+  </form>
+  <form method="POST" th:action="@{/setDifficulty/2}">
+    <button>Medium</button>
+  </form>
+  <form method="POST" th:action="@{/setDifficulty/1.5}">
+    <button>Hard</button>
+  </form>
+
+</div>
+</body>
+</html>

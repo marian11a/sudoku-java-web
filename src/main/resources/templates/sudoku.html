@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sudoku Game</title>
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+
+        #buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        #buttons a {
+            width: 50%;
+            margin: 0 5px; /* Add spacing between buttons */
+            box-sizing: border-box;
+            padding: 6px 14px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Roboto', sans-serif;
+            border-radius: 6px;
+            border: none;
+            background: #6E6D70;
+            box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+            color: #DFDEDF;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            text-decoration: none;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+<div id="container">
+    <div id="sudoku-container">
+        <table id="sudoku-board">
+            <tbody>
+            <tr th:each="row : ${sudokuGrid}">
+                <td th:each="cell : ${row}" th:text="${cell != 0 ? cell : ''}"></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div id="buttons">
+        <a th:href="@{/}">Home</a>
+        <a th:href="@{/sudoku/check}">Solve</a>
+    </div>
+</div>
+
+<script src="/js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+#container {
+    display: inline-block;
+    position: relative;
+}
+
+#sudoku-container {
+    margin-top: 20px;
+}
+
+#sudoku-board {
+    margin-top: 20px;
+    border-collapse: collapse;
+    margin: 20px auto;
+    background-color: rgb(254, 255, 179);
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.6);
+}
+
+td {
+    color: rgb(16, 29, 31);
+    border: 1px solid black;
+    width: 53px;
+    height: 53px;
+    text-align: center;
+    font-size: 33px;
+    font-weight: bold;
+    cursor: pointer;
+    font-family: "Lucida Console", "Courier New", monospace;
+    line-height: 47px;
+}
+
+td:hover {
+    background-color: rgb(198,199, 135);
+}
+
+.fixed-cell {
+    background-color: #ccc;
+}
+
+td:nth-child(3n),
+td:nth-child(6n) td {
+    border-right: 3px solid black;
+}
+
+td:nth-child(3n+1) {
+    border-left: 3px solid black;
+}
+
+tr:nth-child(3n+1) td {
+    border-top: 3px solid black;
+}
+
+tr:nth-child(3n) td {
+    border-bottom: 3px solid black;
+}
+
+.new-number {
+    color: rgb(28, 74, 209);
+}
+
+.my-button {
+    background-color: yellow !important;
+}
